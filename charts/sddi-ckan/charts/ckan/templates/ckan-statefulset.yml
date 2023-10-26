@@ -53,6 +53,13 @@ spec:
         - name: srv-app-data
           emptyDir:
             sizeLimit: 500Mi
+        # Create licenses-volume for ckan licensesGroup configMap
+        # Included only if licensesConfigMap is enabled:
+        {{ if .Values.licensesConfigMap.enabled }}
+        - name: licenses-volume
+          configMap:
+            name: {{ include "ckan.fullname" . }}-licenses
+        {{ end }}
 
       initContainers:
       {{ if .Values.initContainers.initdata.enabled }}
@@ -134,6 +141,12 @@ spec:
               mountPath: /srv/app/data/
             - name: srv-app-i18n
               mountPath: /srv/app/src/ckan/ckan/public/base/i18n/
+            # Mount ckan licensesGroup configMap as licenses-volume
+            # Included only if licensesConfigMap is enabled
+            {{ if .Values.licensesConfigMap.enabled }}
+            - name: licenses-volume
+              mountPath: /srv/app/licenses/
+            {{ end }}
 
           startupProbe:
             httpGet:
