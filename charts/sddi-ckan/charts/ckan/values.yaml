@@ -482,3 +482,10 @@ localIni:
 # to avoid dependency from https://raw.githubusercontent.com/
 licensesConfigMap:
     enabled: false
+
+# -- Enable and specify name and mount path if custom schema from local ConfigMap shall be mounted
+# for custom groups and organizations
+schemaConfigMap:
+  enbled: false
+  name:
+  mountPath:
