@@ -135,8 +135,8 @@ spec:
             - name: data
               mountPath: {{ .Values.persistence.storagePath }}
             - name: local-ini
-              mountPath: /srv/app/production.ini
-              subPath: production.ini
+              mountPath: /srv/app/ckan.ini
+              subPath: ckan.ini
             - name: srv-app-data
               mountPath: /srv/app/data/
             - name: srv-app-i18n
