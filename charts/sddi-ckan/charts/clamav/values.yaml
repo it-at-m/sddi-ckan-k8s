@@ -5,8 +5,7 @@
 replicaCount: 1
 
 image:
-  # TODO: Switch to clamav/clamav container
-  repository: ghcr.io/mailu/clamav
+  repository: clamav/clamav
   tag: ""  # If not defined, uses appVersion
   pullPolicy: IfNotPresent
 
@@ -21,14 +20,7 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-# Temporary workaround because of helm being unable to take {} or null values in subcharts,
-# see https://github.com/helm/helm/pull/12879
-#podSecurityContext:
-#  runAsNonRoot: true
-#  runAsUser: 2000
-#  runAsGroup: 2000
 podSecurityContext: {}
-
 
 securityContext:
   allowPrivilegeEscalation: false
@@ -49,6 +41,10 @@ service:
   port: 3310
   # nodePort: 30100
   annotations: {}
+
+extraEnvVars: {}
+extraEnvVarsCM: ""
+extraEnvVarsSecret: ""
 
 ingress:
   enabled: false
@@ -77,8 +73,6 @@ clamdConfig: |
   # CUSTOM: Use pid file in tmp
   PidFile /tmp/clamd.pid
   LocalSocket /tmp/clamd.sock
-  # CUSTOM: Set local socket group to defined group id
-  LocalSocketGroup 2000
   TCPSocket 3310
   Foreground yes
 
@@ -135,7 +129,6 @@ freshclamConfig: |
   ###############
 
   DatabaseDirectory /data
-  UpdateLogFile /dev/stdout
   LogTime yes
   # CUSTOM: Use pid file in tmp
   PidFile /tmp/freshclam.pid
