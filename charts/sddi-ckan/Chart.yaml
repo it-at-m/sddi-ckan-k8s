@@ -55,5 +55,5 @@ dependencies:
     version: 2.x.x
   - name: clamav
     condition: clamav.enabled
-    version: "~2.8.0"
+    version: 3.5.0
     repository: https://wiremind.github.io/wiremind-helm-charts
