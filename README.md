@@ -48,9 +48,6 @@ helm install ckan sddi-ckan/sddi-ckan \
   --set 'global.ingress.certManager.issuerEmail=myemailaddress@example.de'
 ```
 
-> [!WARNING]
-> For `helm` version `4.x.x` the `--atomic` flag was renamed to `--rollback-on-failure`. See the [helm v4 overview](https://helm.sh/docs/overview/#cli-flags-renamed) for more.
-
 After the Helm deployment has finished, your SDDI CKAN instance is available
 at the FQDN you specified.
 The default username and password are: `admin: changeMe123`.
@@ -167,9 +164,6 @@ Helm chart are available in the [provisioning](provisioning) folder.
      --atomic --wait \
      --values my-values.yml
    ```
-
-    > [!WARNING]
-    > For `helm` version `4.x.x` the `--atomic` flag was renamed to `--rollback-on-failure`. See the [helm v4 overview](https://helm.sh/docs/overview/#cli-flags-renamed) for more.
 
 ## :hammer_and_wrench: Contributing
 
