@@ -10,6 +10,12 @@ For releases `< 1.0.0` minor version step indicate breaking changes.
 
 ## [Unreleased] - 2025-04-08
 
+## [sddi-ckan-4.2.1] - 2026-08-10
+
+### Changed
+
+- Upgrade `ckan` subchart to `4.2.1`
+
 ## [sddi-ckan-4.2.0] - 2025-10-18
 
 ### Changed
@@ -437,8 +443,9 @@ is displayed when navigating to the _Datasets_ view of CKAN.
 
 ### Known issues
 
-[Unreleased]: https://github.com/tum-gis/sddi-ckan-k8s/compare/sddi-ckan-4.2.0...HEAD
+[Unreleased]: https://github.com/it-at-m/sddi-ckan-k8s/compare/sddi-ckan-4.2.1...HEAD
 
+[sddi-ckan-4.2.1]: https://github.com/it-at-m/sddi-ckan-k8s/compare/sddi-ckan-4.2.0...sddi-ckan-4.2.1
 [sddi-ckan-4.2.0]: https://github.com/tum-gis/sddi-ckan-k8s/compare/sddi-ckan-4.1.0...sddi-ckan-4.2.0
 [sddi-ckan-4.1.0]: https://github.com/tum-gis/sddi-ckan-k8s/compare/sddi-ckan-4.0.0...sddi-ckan-4.1.0
 [sddi-ckan-4.0.0]: https://github.com/tum-gis/sddi-ckan-k8s/compare/sddi-ckan-3.0.0...sddi-ckan-4.0.0
