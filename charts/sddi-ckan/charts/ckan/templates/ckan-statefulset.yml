@@ -39,6 +39,7 @@ spec:
       serviceAccountName: {{ include "ckan.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      terminationGracePeriodSeconds: {{- toYaml .Values.terminationGracePeriodSeconds | nindent 7 }}
 
       volumes:
       {{- if .Values.volumes }}
