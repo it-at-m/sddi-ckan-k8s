@@ -80,6 +80,9 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+# -- [k8s: Graceful termination](https://kubernetes.io/docs/tutorials/services/pods-and-endpoint-termination-flow/#example-flow-with-endpoint-termination)
+terminationGracePeriodSeconds: 45
+
 service:
   # -- Type of service for http
   type: ClusterIP

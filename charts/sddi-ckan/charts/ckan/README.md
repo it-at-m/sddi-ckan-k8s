@@ -148,6 +148,7 @@ A Helm chart for SDDI enabled CKAN.
 | security.redis.host | string | `"redis-hl"` | [ckanext-security redis host](https://github.com/MarijaKnezevic/ckanext-security#additional-settings-for-sddi) |
 | security.redis.port | int | `6379` | [ckanext-security redis port](https://github.com/MarijaKnezevic/ckanext-security#additional-settings-for-sddi) |
 | securityContext | object | `{}` | [k8s: Security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/) |
+| terminationGracePeriodSeconds | int | `45` | [k8s: Graceful termination](https://kubernetes.io/docs/tutorials/services/pods-and-endpoint-termination-flow/#example-flow-with-endpoint-termination) |
 | service.port | int | `5000` | Service port for http |
 | service.type | string | `"ClusterIP"` | Type of service for http |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
